@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
     'CloudVisionKit' => ['Pod/Assets/*.png']
   }
 
-  s.dependency 'Alamofire', '~> 4.0.1'
+  s.dependency 'Alamofire', '~> 4.4.0'
   s.dependency 'SwiftyJSON', '~> 3.1.1'
   s.dependency 'Unbox', '~> 2.1'
 end
