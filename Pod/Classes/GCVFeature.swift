@@ -35,6 +35,7 @@ public enum GCVFeatureDetectionType: String {
     case Text               = "TEXT_DETECTION"
     case SafeSearch         = "SAFE_SEARCH_DETECTION"
     case ImageProperties    = "IMAGE_PROPERTIES"
+    case WebDetection       = "WEB_DETECTION"
 }
 
 public struct GCVFeature {

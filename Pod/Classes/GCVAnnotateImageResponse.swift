@@ -27,11 +27,13 @@
 import Unbox
 
 public struct GCVAnnotateImageResponse: Unboxable {
+  
     public var faceAnnotations:     [GCVFaceAnnotation]?
     public var landmarkAnnotations: [GCVEntityAnnotation]?
     public var logoAnnotations:     [GCVEntityAnnotation]?
     public var labelAnnotations:    [GCVEntityAnnotation]?
     public var textAnnotations:     [GCVEntityAnnotation]?
+    public var webAnnotations:      [GCVEntityAnnotation]?
 
     public init(unboxer: Unboxer) {
         self.faceAnnotations = unboxer.unbox(key: "faceAnnotations")
@@ -39,5 +41,8 @@ public struct GCVAnnotateImageResponse: Unboxable {
         self.logoAnnotations = unboxer.unbox(key: "logoAnnotations")
         self.labelAnnotations = unboxer.unbox(key: "labelAnnotations")
         self.textAnnotations = unboxer.unbox(key: "textAnnotations")
+        if let w = unboxer.dictionary["webDetection"] as? UnboxableDictionary {
+          self.webAnnotations = Unboxer(dictionary: w).unbox(key: "webEntities")
+        }
     }
 }
